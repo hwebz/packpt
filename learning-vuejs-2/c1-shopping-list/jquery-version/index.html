@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Shopping Cart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>My Shopping List</h2>
+        <div class="input-group mb-3">
+            <input type="text" placeholder="Add shopping list item" class="js-new-item form-control">
+            <span class="input-group-btn">
+                <button class="js-add btn btn-default">Add!</button>
+            </span>
+        </div>
+        <ul>
+            <li>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" class="js-item" name="list"> Carrot
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="list" class="js-item"> Book
+                    </label>
+                </div>
+            </li>
+            <li class="removed">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="list" checked class="js-item"> Gift for aunt's birthday
+                    </label>
+                </div>
+            </li>
+        </ul>
+        <div class="footer">
+            <hr>
+            <em>Change the title of your shopping list here</em>
+            <input type="text" class="js-change-title" value="My Shopping List">
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
