@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>EmberJS Installation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ember.js/1.6.0/ember.min.js"></script>
+
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <script type="text/x-handlebars">
+        {{outlet}}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="index">
+        {{#link-to "walks"}}View Walks{{/link-to}}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="walks">
+        {{#link-to "index"}}Return Home{{/link-to}} {{#link-to "walks.view"}}Show{{/link-to}}
+
+        <p>
+            {{outlet}}
+        </p>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="walks/view">
+        View!
+    </script>
+
+</body>
+
+</html>
