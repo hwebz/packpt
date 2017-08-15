@@ -3,3 +3,8 @@
 3, Connect to mongodb server using: "mongo"
 4, Import data to mongo db: "mongoimport --db local --collection articles --jsonArray initData.js --host=127.0.0.1"
 5, "npm init --yes"
+6, install Falcor (is the middleware to handle all the requests from client-side 
+                    to one JSON file that contains all the data get from multiple 
+                    API endpoints. When the structure of data on any API endpoint 
+                    will change, we just need to configure in Falcor, not both in 
+                    client-side and server-side. Falcor will auto sync data)

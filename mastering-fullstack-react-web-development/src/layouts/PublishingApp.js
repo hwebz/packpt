@@ -1,12 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import falcorModel from '../falcorModel.js';
+import { bindActionCreators } from 'redux';
+import articleActions from '../actions/article.js';
 
 const mapStateToProps = (state) => ({
     ...state
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    
+    articleActions: bindActionCreators(articleActions, dispatch)
 });
 
 class PublishingApp extends React.Component {
@@ -14,9 +17,25 @@ class PublishingApp extends React.Component {
         super(props);
     }
 
+    componentWillMount() {
+        this._fetch(); // for fetching all data from Falcor
+    }
+    
+    async _fetch() {
+        const articlesLength = await falcorModel.
+            getValue('articles.length').
+            then((length) => length);
+
+        const articles = await falcorModel.
+            get(['articles', {from: 0, to: articlesLength - 1}, ['id', 'articleTitle', 'articleContent']])
+            .then((articlesResponse) => articlesResponse.json.articles);
+
+        this.props.articleActions.articlesList(articles);
+    }
+
     render() {
         let articlesJSX = [];
-
+        console.log(this.props);
         for(let articleKey in this.props) {
             const articleDetails = this.props[articleKey];
             const currentArticleJSX = (
