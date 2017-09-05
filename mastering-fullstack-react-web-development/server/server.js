@@ -28,6 +28,11 @@ app.use(bodyParser.json({
     extended: false
 }));
 
+// Allow you to post usernames and passwords to the backend.
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
+
 // app.get('/', (req, res) => res.send('Publishing App Initial Application'));
 // app.get('/', (req, res) => {
 //     Article.find((err, articlesDocs) => {
